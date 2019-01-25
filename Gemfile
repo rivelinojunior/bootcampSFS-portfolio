@@ -10,7 +10,8 @@ gem 'webpacker'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
-gem "mini_magick"
+gem 'mini_magick'
+gem 'devise'
  
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -18,7 +19,9 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
-  gem "factory_bot_rails", "~> 4.0"
+  gem 'factory_bot_rails', '~> 4.0'
+  gem 'selenium-webdriver', '~> 3.0'
+  gem 'rspec-expectations', '~> 3.4'
 end
  
 group :development do
