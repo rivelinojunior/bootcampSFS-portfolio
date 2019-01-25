@@ -14,6 +14,11 @@ gem "mini_magick"
  
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'ffaker'
+  gem 'dotenv-rails'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+  gem "factory_bot_rails", "~> 4.0"
 end
  
 group :development do
@@ -22,5 +27,5 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
- 
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
