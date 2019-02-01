@@ -42,6 +42,6 @@ class Portfolio < ApplicationRecord
 
   def generate_slug
     slug_generator = PortfolioSlugGeneratorService.new.call
-    self.slug ||= slug_generator
+    self.slug ||= slug_generator.call
   end
 end
