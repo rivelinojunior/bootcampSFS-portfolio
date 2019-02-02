@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col m10 offset-m1 s12">
+    <div class="col s12">
       <h5 class="custom-grey-text page-title">Configure seu Portfolio</h5>
       <div class="card-panel">
         <form>
