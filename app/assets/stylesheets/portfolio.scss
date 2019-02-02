@@ -36,14 +36,16 @@
       text-transform: capitalize;
     }
   }
-}
 
-.add-portfolio {
-  a.new-portfolio > img {
-    margin-top: 55%;
-    margin-bottom: 55%;
+  .add-portfolio {
+    a.new-portfolio > img {
+      padding-top: 54%;
+      padding-bottom: 53%;
+    }
   }
 }
+
+
 
 div.slug-actions {
   margin-top: 4%;
