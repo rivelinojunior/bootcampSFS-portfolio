@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       param: :tag_id,
       controller: :portfolio_tags
     )
+    resources :blocks, only: %i[index create destroy]
   end
   resources :tags, only: :index
 end
