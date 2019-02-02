@@ -2,7 +2,7 @@ class BlocksController < ApplicationController
   before_action :load_portfolio
 
   def index
-    render json: { blo-cks: @portfolio.blocks }
+    render json: { blocks: @portfolio.blocks }
   end
 
   def create
