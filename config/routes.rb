@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       controller: :portfolio_tags
     )
     resources :blocks, only: %i[index create destroy]
+    resources :profiles, only: %i[index update]
   end
   resources :tags, only: :index
 end
