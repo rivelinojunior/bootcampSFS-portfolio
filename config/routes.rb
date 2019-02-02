@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :profiles, only: %i[index update]
     resources :experiences, only: %i[index create destroy]
     resources :educations, only: %i[index create destroy]
+    resources :skills, only: %i[index create destroy]
   end
   resources :tags, only: :index
 end
