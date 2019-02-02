@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :educations, only: %i[index create destroy]
     resources :skills, only: %i[index create destroy]
     resources :hobbies, only: %i[index create destroy]
+    resources :languages, only: %i[index create destroy]
   end
   resources :tags, only: :index
 end
