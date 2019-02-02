@@ -26,7 +26,9 @@
             </div>
  
             <div class="col l2 m2 s6 center">
-              <label class="font_16 custom-grey-text text-darken-1">Listado <i class="fa fa-info-circle tooltipped"data-tooltip="Aparece nas pesquisas por candidatos"></i></label>
+              <label class="font_16 custom-grey-text text-darken-1">
+                Listado <i class="fa fa-info-circle tooltipped" data-tooltip="Aparece nas pesquisas por candidatos"></i>
+              </label>
               <div class="switch">
                 <label>
                   <input name="portfolio[listed]" v-model="portfolio.listed" type="checkbox" @change="update()" />
@@ -57,9 +59,10 @@
 <script>
  
 const url = new URL(document.location)
+import Tags from './tags.vue'
  
 export default {
-  components: {  },
+  components: { Tags },
  
   data() {
     return {
