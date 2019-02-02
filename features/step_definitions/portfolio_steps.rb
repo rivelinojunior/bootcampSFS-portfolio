@@ -50,23 +50,26 @@ end
 Quando 'sai do campo slug' do
   page.execute_script("document.getElementsByName('portfolio[slug]')[0]" \
                       ".dispatchEvent(new Event('change'));")
+  wait_for_ajax
 end
 
 Quando 'clica no switch {string}' do |field|
   @new_value = !@portfolio[field]
   all("input[name='portfolio[#{field}]'] + span.lever",
       visible: false).first.click
+  wait_for_ajax
 end
 
 Quando 'clica no checkbox {string}' do |field|
   @new_value = !@portfolio[field]
   find("input[name='portfolio[#{field}]'] + span").click
+  wait_for_ajax
 end
 
 Então 'o campo {string} do portfólio é atualizado' do |field|
   wait_for_ajax
   @portfolio.reload
-  expect(@portfolio[field]).to eq(@new_value)
+  expect(@portfolio[field.to_s]).to eq(@new_value)
 end
 
 Dado 'possui o portfólio com slug {string}' do |slug|
