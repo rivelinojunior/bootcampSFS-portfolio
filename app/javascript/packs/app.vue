@@ -1,16 +1,21 @@
 <template>
-  <portfolio></portfolio>
+  <div>
+    <portfolio></portfolio>
+    <block></block>
+  </div>
 </template>
  
 <script>
   import Portfolio from './components/portfolio';
+  import Block from './components/block';
  
-  export default {
+  export default {    
+    components: {
+      Portfolio, Block
+    },
+
     data() {
       return { }
-    },
-    components: {
-      Portfolio
     }
   }
 </script>
