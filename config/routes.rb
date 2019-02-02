@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     )
     resources :blocks, only: %i[index create destroy]
     resources :profiles, only: %i[index update]
+    resources :experiences, only: %i[index create destroy]
   end
   resources :tags, only: :index
 end
