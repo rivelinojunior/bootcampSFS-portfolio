@@ -5,7 +5,7 @@
       <label for="autocomplete-tags">Procure uma Tag</label>
     </div>
     <div class="col s12">
-      <div class="chip" v-for="tag in portfolioTags" v-bind:key="tag">
+      <div class="chip" v-for="tag in portfolioTags" :key="tag.id">
         {{ tag.title }}
         <i class="close material-icons" @click="removeTag(tag)">close</i>
       </div>
