@@ -20,6 +20,10 @@
         <a class="fa fa-times grey-text right" @click="removeBlock(block)"></a>
         <component :is="block.kind" :portfolioId="portfolioId" :blockId="block.id"></component>
       </div>
+      <div class="card-panel">
+        <a class="fa fa-times grey-text right" @click="removeBlock('')"></a>
+        <contact-form></contact-form>
+      </div>
       
       <div class="card-panel center">
         <img src="/assets/add_portfolio.png" id="add-right-block" @click="openModalToAdd('right')" />
@@ -57,13 +61,15 @@
   import Hobby from '../portfolio_resources/hobby'
   import Language from '../portfolio_resources/language'
   import Skill from '../portfolio_resources/skill'
-  import Social from '../portfolio_resources/social'  
+  import Social from '../portfolio_resources/social'
+  import ContactForm from '../portfolio_resources/contact_form_block'
  
   export default {
       components: {
       Profile,
       Education,
       'additional_information': AdditionalInformation,
+      'contact-form': ContactForm,
       About,
       Contact,
       Experience,
@@ -93,7 +99,8 @@
           skill: "Habilidade",
           hobby: "Hobby",
           language: "Linguagem",
-          additional_information: "Informações Adicionais"
+          additional_information: "Informações Adicionais",
+          contact_form: "Formulário de contato"
         }
       }
     },
