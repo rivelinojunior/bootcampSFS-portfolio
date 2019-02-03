@@ -1,6 +1,7 @@
 class PortfoliosController < ApplicationController
   before_action :load_portfolios, only: :index
   before_action :load_portfolio, only: %i[edit update]
+  skip_before_action :authenticate_user!, only: :show
 
   def index
     authorize(Portfolio)
@@ -14,10 +15,18 @@ class PortfoliosController < ApplicationController
   end
 
   def show
-    @portfolio = Portfolio.find(params[:id])
-    authorize @portfolio
-    render json: { portfolio: @portfolio },
-           include: { tags: { only: %i[id title] } }, status: :ok
+    respond_to do |format|
+      format.json do
+        @portfolio = Portfolio.find(params[:id])
+        authorize @portfolio
+        render json: { portfolio: @portfolio },
+               include: { tags: { only: %i[id title] } }, status: :ok
+      end
+      format.html do
+        @portfolio = Portfolio.find_by(slug: params[:slug])
+        authorize @portfolio
+      end
+    end
   end
 
   def edit

@@ -22,4 +22,5 @@ Rails.application.routes.draw do
     resources :socials, only: %i[index create destroy]
   end
   resources :tags, only: :index
+  get '/:slug', to: 'portfolios#show'
 end
