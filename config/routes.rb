@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contact_forms, only: [:create]
   root 'pages#home'
   devise_for :users
   resources :portfolios, except: :new do
