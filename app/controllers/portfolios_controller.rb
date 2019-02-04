@@ -23,7 +23,11 @@ class PortfoliosController < ApplicationController
                include: { tags: { only: %i[id title] } }, status: :ok
       end
       format.html do
-        @portfolio = Portfolio.find_by(slug: params[:slug])
+        @portfolio = Portfolio.find_by!(slug: params[:slug])
+        unless @portfolio.active || @portfolio.user == current_user
+          raise ActiveRecord::RecordNotFound
+        end
+
         authorize @portfolio
       end
     end

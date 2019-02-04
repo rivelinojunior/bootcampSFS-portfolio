@@ -10,4 +10,12 @@ class ApplicationController < ActionController::Base
       }
     end
   end
+
+  rescue_from ActiveRecord::RecordNotFound do
+    render file: "#{Rails.root}/public/404", status: :not_found
+  end
+
+  def after_sign_in_path_for
+    portfolios_path
+  end
 end
