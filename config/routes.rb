@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :contact_forms, only: [:create]
   root 'pages#home'
   devise_for :users
   resources :portfolios, except: :new do
@@ -23,5 +22,7 @@ Rails.application.routes.draw do
     resources :socials, only: %i[index create destroy]
   end
   resources :tags, only: :index
+  resources :search, only: :index
+  resources :contact_forms, only: :create
   get '/:slug', to: 'portfolios#show'
 end
