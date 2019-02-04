@@ -1,6 +1,8 @@
 class Portfolio < ApplicationRecord
   MAX_NUMBER_OF_TAGS = 4
 
+  paginates_per 5
+
   before_validation :generate_slug, on: :create
 
   belongs_to :user
