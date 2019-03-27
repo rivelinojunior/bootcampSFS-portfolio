@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   root 'pages#home'
   devise_for :users
   resources :portfolios, except: :new do
+    member do
+      resources :payments, only: %i[index create]
+    end
     resources(
       :tags,
       only: %i[create destroy],
