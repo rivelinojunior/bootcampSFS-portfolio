@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col m4 offset-m1 s12 ">
+    <div class="input-field">
+      <%= form.text_field "card[fullname]", id: 'fullname', required: true %>
+      <label for="email">Nome no cartão</label>
+    </div>
+    <div class="input-field">
+      <%= form.text_field "card[cpf]", id: 'cpf', required: true %>
+      <label for="number">CPF</label>
+    </div>
+    <div class="input-field">
+      <%= form.date_field "card[birthdate]", id: 'birthdate', required: true %>
+      <label for="cvc">Data de nascimento</label>
+    </div>
+  </div>
+  <div class="col m4 offset-m2 s12">
+    <div class="input-field">
+      <%= form.text_field "card[number]", id: 'card_number', required: true %>
+      <label for="number">Número</label>
+    </div>
+    <div class="input-field">
+      <%= form.select("expiration_month", (1..12).to_a) %>
+      <label for="expiration_month">Mês de expiração</label>
+    </div>
+    <div class="input-field">
+      <%= form.select("expiration_year", credit_card_expiration_year_range) %>
+      <label for="expiration_year">Ano de expiração</label>
+    </div>
+    <div class="input-field">
+      <%= form.text_field :cvc, id: 'card_cvc', required: true %>
+      <label for="cvc">CVC</label>
+    </div>
+    <div class="input-field">
+      <textarea id="public_key" style="display:none;">
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAm6xi3k7sFNHNzThv8xzT
+          h0VxIYp91mR4Euc7EL5wpABlcW4/PQ5YGIqsE+f0wQsTSPMdY/RfTwCjCIwVxVPI
+          LcRnT03F59ymjxi763DgYkefs8PaaNZjO8vEL4NNYlHUchia2rb5aWYHKBO/VXsn
+          8PSxTGoZRkcWnWlyP+tR62T62O0VlGWBAuaNfGJuDx/tGpP10eNy8c3493eGUaZO
+          sje9Hlcf+jKm91+HrH5+HRkiaHZMYAv59ctJF8tCVXlGiRLNDkpI3YMnbKT3TKNf
+          SS1+IaR+Q6Pk88DGbk6UIAUL6KYPLAgX4URINyuRideDRzshLL29Ivf+OF73J5nA
+          ZwIDAQAB
+          -----END PUBLIC KEY-----
+      </textarea>
+    </div>
+    <div class="input-field">
+      <%= form.hidden_field "card_hash", value: '' %>
+    </div>
+  </div>
+</div>
