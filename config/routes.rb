@@ -28,4 +28,5 @@ Rails.application.routes.draw do
   resources :search, only: :index
   resources :contact_forms, only: :create
   get '/:slug', to: 'portfolios#show'
+  post '/webhooks', to: 'webhooks#webhooks'
 end
